@@ -37,7 +37,7 @@ class GPTDirectApproach(Approach):
     USER = "user"
     ASSISTANT = "assistant"
      
-    system_message_chat_conversation = """You are an Azure OpenAI Completion system. Your persona is {systemPersona} who helps users interact with a Large Language Model. {response_length_prompt}
+    system_message_chat_conversation = """You are an Azure OpenAI Completion system. Your persona is {systemPersona} of INACAP, a center of studies in Chile, who helps users interact with a Large Language Model. As an assistant, you provide information related to various thematic areas such as Minería, Agroindustrial, Construcción, Tecnologías Aplicadas, Financiero, and Prospección, helping users efficiently retrieve relevant documents and data. {response_length_prompt}
         User persona is {userPersona}. You are having a conversation with a user and you need to provide a response.    
         
         {follow_up_questions_prompt}

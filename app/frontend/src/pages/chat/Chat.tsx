@@ -31,7 +31,7 @@ import React from "react";
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
     const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
-    const [retrieveCount, setRetrieveCount] = useState<number>(5);
+    const [retrieveCount, setRetrieveCount] = useState<number>(10);
     const [useSuggestFollowupQuestions, setUseSuggestFollowupQuestions] = useState<boolean>(false);
     const [userPersona, setUserPersona] = useState<string>("analyst");
     const [systemPersona, setSystemPersona] = useState<string>("an Assistant");
@@ -43,7 +43,7 @@ const Chat = () => {
     // Setting responseTemp to 0.6 by default, this will effect the default display of the ResponseTempButtonGroup below.
     // It must match a valid value of one of the buttons in the ResponseTempButtonGroup.tsx file.
     // If you update the default value here, you must also update the default value in the onResponseTempChange method.
-    const [responseTemp, setResponseTemp] = useState<number>(0.6);
+    const [responseTemp, setResponseTemp] = useState<number>(0);
 
     const [activeChatMode, setChatMode] = useState<ChatMode>(ChatMode.WorkOnly);
     const [defaultApproach, setDefaultApproach] = useState<number>(Approaches.ReadRetrieveRead);
@@ -355,7 +355,7 @@ const Chat = () => {
                                     <div className={styles.chatEmptyStateHeader}> 
                                         <BuildingMultipleFilled fontSize={"100px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work Data logo" />
                                         </div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>
+                                    <h1 className={styles.chatEmptyStateTitle}>Asistente IA de Inacap</h1>
                                 </div>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <div>
@@ -373,11 +373,11 @@ const Chat = () => {
                                 </div>
                             }
                             <span className={styles.chatEmptyObjectives}>
-                                <i>Information Assistant uses AI. Check for mistakes.   </i><a href="https://github.com/microsoft/PubSec-Info-Assistant/blob/main/docs/transparency.md" target="_blank" rel="noopener noreferrer">Transparency Note</a>
+                                <i>El asistente utiliza IA. Comprueba si hay errores.   </i><a href="https://www.microsoft.com/es/ai/principles-and-approach" target="_blank" rel="noopener noreferrer">Transparency Note</a>
                             </span>
                             {activeChatMode != ChatMode.Ungrounded &&
                                 <div>
-                                    <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
+                                    <h2 className={styles.chatEmptyStateSubtitle}>Pregunte lo que quiera o pruebe con un ejemplo</h2>
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
                             }
@@ -438,7 +438,7 @@ const Chat = () => {
                         )}
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. Who are Microsoft's top executives, provided as a table?)"
+                            placeholder="Escriba una nueva pregunta (por ejemplo, ¿Cómo se gestiona un cambio en el servicio?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question, defaultApproach, {}, {}, {})}
                             onAdjustClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)}

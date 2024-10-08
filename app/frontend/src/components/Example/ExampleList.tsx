@@ -11,9 +11,9 @@ export type ExampleModel = {
 };
 
 const EXAMPLES: ExampleModel[] = [
-    { text: "Are there any radio telescopes in Australia?", value: "Are there any radio telescopes in Australia?" },
-    { text: "What are Microsoft's primary sources of revenue?", value: "What are Microsoft's primary sources of revenue?" },
-    { text: "What are some flavors of Breyers?", value: "What are some flavors of Breyers?" }
+    { text: "¿Cómo puedo buscar documentos en un Consejo Empresarial Sectorial?", value: "¿Cómo puedo buscar documentos en un Consejo Empresarial Sectorial?" },
+    { text: "¿Qué tipo de documentos puedo consultar en cada Consejo?", value: "¿Qué tipo de documentos puedo consultar en cada Consejo?" },
+    { text: "¿Puedo obtener información de varios Consejos en una misma consulta?", value: "¿Puedo obtener información de varios Consejos en una misma consulta?" }
 ];
 
 interface Props {
